@@ -4,4 +4,6 @@
     <string name="welcome_string">Welcome!</string>
     <string name="login_text">Login</string>
     <string name="password_placeholder">Enter password...</string>
+    <string name="banking_button_text">Banking</string>
+    <string name="weight_button_text">Weight</string>
 </resources>
