@@ -8,25 +8,38 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     private boolean hqMode;
+    public PasswordChecker pw;
+
+    private static MainActivity instance;
+
+    public static MainActivity getInstance() {
+        return instance;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        instance = this;
+        pw = new PasswordChecker();
         setContentView(R.layout.activity_main);
     }
 
-    public void changeHQMode(boolean newValue) {
+    private void changeHQMode(boolean newValue) { // change mode and all pictures
         hqMode = newValue;
         if (newValue) {
             // TODO: set hq mode pictures
-            ImageView imv = findViewById(R.id.background);
-            imv.setImageResource(R.drawable.hq1);
+            ImageView imv = findViewById(R.id.MainBackground);
+            //imv.setImageResource(R.drawable.hq1);
         } else {
             // TODO: set safe mode pictures
         }
     }
 
     public void LoginButtonClick(View view) {
-        changeHQMode(!hqMode);
+        setContentView(R.layout.login_screen);
+    }
+
+    public void LoginButton(View view) {
+        pw.checkPassword();
     }
 }
