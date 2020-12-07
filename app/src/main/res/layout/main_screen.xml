@@ -36,6 +36,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="84dp"
         android:background="#041B06"
+        android:onClick="bankingButton"
         android:text="@string/banking_button_text"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,12 +49,13 @@
         android:layout_marginStart="304dp"
         android:layout_marginBottom="84dp"
         android:background="#041B06"
+        android:onClick="weightButton"
         android:text="@string/weight_button_text"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/JokerMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
