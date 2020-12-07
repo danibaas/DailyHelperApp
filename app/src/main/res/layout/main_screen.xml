@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="#FAFAFA">
 
     <ImageView
-        android:id="@+id/MainBackground"
+        android:id="@+id/HomeBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/background_image_description"
@@ -51,4 +52,21 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/JokerMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#000000"
+        android:onClick="modeSwitch"
+        android:outlineAmbientShadowColor="#FF0000"
+        android:shadowColor="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textOff="@string/joker_mode"
+        android:textOn="@string/hq_mode"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
