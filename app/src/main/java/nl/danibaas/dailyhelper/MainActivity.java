@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         // TODO: open weight page
     }
 
-    public void modeSwitch(View view) {
-
+    public void modeSwitch(View view) { // when mode switch button is clicked
+        mode.switchModes(!mode.jokerMode);
     }
 }

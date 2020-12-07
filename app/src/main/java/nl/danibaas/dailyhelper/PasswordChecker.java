@@ -9,8 +9,6 @@ import android.widget.Toast;
 
 public class PasswordChecker {
 
-    private final int width = 20, height = 20;
-
     public void checkPassword() {
         EditText passwordField = MainActivity.getInstance().findViewById(R.id.PasswordEntry);
         final String pw = "IMadeThisMyself#2020";
