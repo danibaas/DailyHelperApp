@@ -14,17 +14,26 @@ public class ModeSwitcher {
     private void switchImages(boolean jokerMode) {
         ImageView mainBackground = MainActivity.getInstance().findViewById(R.id.MainBackground);
         ImageView homeScreenBackground = MainActivity.getInstance().findViewById(R.id.HomeBackground);
+        ImageView bankingBackground = MainActivity.getInstance().findViewById(R.id.BankingBackground);
         if (jokerMode) { // joker mode
             if (mainBackground != null) {
                 mainBackground.setImageResource(R.drawable.joker);
-            } else {
+            }
+            if (homeScreenBackground != null){
                 homeScreenBackground.setImageResource(R.drawable.joker1);
+            }
+            if (bankingBackground != null) {
+                bankingBackground.setImageResource(R.drawable.joker1);
             }
         } else { // harley quinn mode
             if (mainBackground != null) {
                 mainBackground.setImageResource(R.drawable.hq1);
-            } else {
+            }
+            if (homeScreenBackground != null){
                 homeScreenBackground.setImageResource(R.drawable.hq);
+            }
+            if (bankingBackground != null) {
+                bankingBackground.setImageResource(R.drawable.hq3);
             }
         }
     }

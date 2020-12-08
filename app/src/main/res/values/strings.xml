@@ -9,4 +9,6 @@
     <string name="joker_mode">Joker Mode</string>
     <string name="hq_mode">Harley Quinn Mode</string>
     <string name="banking_string">Banking</string>
+    <string name="banking_expenses_button">Expenses</string>
+    <string name="banking_income_button">Income</string>
 </resources>
