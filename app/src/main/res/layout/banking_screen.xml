@@ -19,7 +19,7 @@
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_string"
+        android:text="@string/banking_string"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
