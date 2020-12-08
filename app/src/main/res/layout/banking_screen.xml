@@ -73,4 +73,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:thumbTint="#FFFFFF"
         app:trackTint="#000000" />
+
+    <Button
+        android:id="@+id/TotalMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#041B06"
+        android:onClick="totalButton"
+        android:text="@string/banking_total"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

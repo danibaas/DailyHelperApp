@@ -1,6 +1,7 @@
 package nl.danibaas.dailyhelper;
 
 import android.view.View;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -9,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
     // Self created objects
     public PasswordChecker pw;
     public ModeSwitcher mode;
+    public Banking banking;
 
     private static MainActivity instance;
 
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         instance = this;
         pw = new PasswordChecker();
         mode = new ModeSwitcher();
+        banking = new Banking();
         setContentView(R.layout.activity_main);
     }
 
@@ -43,5 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void modeSwitch(View view) { // when mode switch button is clicked
         mode.switchModes(!mode.jokerMode);
+    }
+
+    public void totalButton(View view) {
+        banking.refreshTotal();
     }
 }
