@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void bankingButton(View view) {
-        // TODO: open banking page
+        setContentView(R.layout.banking_screen);
     }
 
     public void weightButton(View view) {

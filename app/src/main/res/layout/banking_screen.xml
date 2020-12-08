@@ -46,14 +46,14 @@
         android:id="@+id/Weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="304dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="84dp"
         android:background="#041B06"
         android:onClick="weightButton"
         android:text="@string/banking_income_button"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/JokerMode"
