@@ -33,7 +33,7 @@ public class ModeSwitcher {
                 homeScreenBackground.setImageResource(R.drawable.hq);
             }
             if (bankingBackground != null) {
-                bankingBackground.setImageResource(R.drawable.hq2);
+                bankingBackground.setImageResource(R.drawable.hq2proper);
             }
         }
     }

@@ -30,20 +30,19 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
-        android:id="@+id/Banking"
+        android:id="@+id/Expenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="84dp"
         android:background="#041B06"
-        android:onClick="bankingButton"
         android:text="@string/banking_expenses_button"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/Weight"
+        android:id="@+id/Income"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"

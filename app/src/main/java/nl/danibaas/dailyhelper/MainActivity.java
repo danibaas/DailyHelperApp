@@ -36,19 +36,22 @@ public class MainActivity extends AppCompatActivity {
         pw.checkPassword();
     }
 
-    public void bankingButton(View view) {
-        setContentView(R.layout.banking_screen);
-    }
-
-    public void weightButton(View view) {
-        // TODO: open weight page
-    }
-
     public void modeSwitch(View view) { // when mode switch button is clicked
         mode.switchModes(!mode.jokerMode);
     }
 
+    // banking buttons
+    public void bankingButton(View view) {
+        setContentView(R.layout.banking_screen);
+        banking.refreshTotal();
+    }
+
     public void totalButton(View view) {
         banking.refreshTotal();
+    }
+
+    // weight button
+    public void weightButton(View view) {
+        // TODO: open weight page
     }
 }
