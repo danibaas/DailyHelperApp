@@ -1,4 +1,4 @@
-package nl.danibaas.dailyhelper;
+package nl.danibaas.dailyhelper.utilities;
 
 import android.content.Context;
 import android.text.Html;
@@ -6,6 +6,8 @@ import android.view.Gravity;
 import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.Toast;
+import nl.danibaas.dailyhelper.MainActivity;
+import nl.danibaas.dailyhelper.R;
 
 public class PasswordChecker {
 
@@ -13,7 +15,7 @@ public class PasswordChecker {
         EditText passwordField = MainActivity.getInstance().findViewById(R.id.PasswordEntry);
         final String pw = "IMadeThisMyself#2020";
         if (passwordField.getText().toString().equals(pw)) {
-            MainActivity.getInstance().setContentView(R.layout.main_screen);
+            MainActivity.getInstance().screen.setContentView(Screens.MAIN_SCREEN);
         } else {
             showToast();
         }

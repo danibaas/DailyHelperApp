@@ -1,10 +1,20 @@
 package nl.danibaas.dailyhelper;
 
 import android.widget.TextView;
+import nl.danibaas.dailyhelper.utilities.Formatter;
 
 import java.util.Random;
 
 public class Banking {
+    private ExpenseHandler expenses;
+
+    public Banking() {
+        expenses = new ExpenseHandler();
+    }
+
+    public ExpenseHandler getHandler() {
+        return expenses;
+    }
 
     private double getTotal() {
         // TODO: Calculate total and return it
@@ -14,12 +24,15 @@ public class Banking {
 
     public void refreshTotal() {
         TextView tv = MainActivity.getInstance().findViewById(R.id.TotalMoney);
-        tv.setText(MainActivity.getInstance().getString(R.string.banking_total) + " " + formatNumber(getTotal()));
-    }
-
-    private String formatNumber(double amount) {
-        String total = amount + "";
-        String[] split = total.split("\\.");
-        return split[0] + "." + split[1].substring(0, 2);
+        String text = MainActivity.getInstance().getString(R.string.banking_total) + " ";
+        String toAdd = "0";
+        try {
+            toAdd = Formatter.formatDouble(getTotal());
+        } catch (NullPointerException e) {
+            System.out.println("Number was not formattable! " + e);
+        } finally {
+            text += toAdd;
+            tv.setText(text);
+        }
     }
 }

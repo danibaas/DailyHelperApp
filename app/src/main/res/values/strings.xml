@@ -11,5 +11,7 @@
     <string name="banking_string">Banking</string>
     <string name="banking_expenses_button">Expenses</string>
     <string name="banking_income_button">Income</string>
-    <string name="banking_total">Total: </string>
+    <string name="banking_total">Total:  </string>
+    <string name="banking_expenses">Expenses</string>
+    <string name="back_button">Back</string>
 </resources>
