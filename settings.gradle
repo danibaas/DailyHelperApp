@@ -1,2 +1,3 @@
+include ':yes'
 include ':app'
 rootProject.name = "DailyHelper"

@@ -19,7 +19,7 @@ public class ModeSwitcher {
     public void refresh() {
         switchImages(jokerMode);
         androidx.appcompat.widget.SwitchCompat jkMode = MainActivity.getInstance().findViewById(R.id.JokerMode);
-        jkMode.setChecked(!jokerMode);
+        if (jkMode != null) jkMode.setChecked(!jokerMode);
     }
 
     public boolean getMode() {
@@ -58,7 +58,7 @@ public class ModeSwitcher {
                 return;
             }
             if (homeScreenBackground != null){
-                homeScreenBackground.setImageResource(R.drawable.hq);
+                homeScreenBackground.setImageResource(R.drawable.hq4proper);
                 homeScreenText.setTextColor(Color.BLACK);
                 return;
             }

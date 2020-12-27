@@ -23,8 +23,10 @@
         android:id="@+id/MainBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="116dp"
         android:contentDescription="@string/background_image_description"
+        android:onClick="modeSwitch"
+        android:paddingBottom="110dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/joker" />
@@ -35,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="124dp"
+        android:allowUndo="false"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/password_placeholder"
@@ -42,4 +45,23 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/ShowPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
+        android:background="#000000"
+        android:onClick="showPassword"
+        android:outlineAmbientShadowColor="#FF0000"
+        android:shadowColor="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textOff="@string/joker_mode"
+        android:textOn="@string/hq_mode"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:thumbTint="#FFFFFF"
+        app:trackTint="#000000" />
 </androidx.constraintlayout.widget.ConstraintLayout>

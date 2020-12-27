@@ -7,7 +7,8 @@ import java.util.Arrays;
 
 public enum Screens {
 
-    MAIN_SCREEN(R.layout.main_screen, "Main", null),
+    LOGIN_SCREEN(R.layout.login_screen, "Login", null),
+    MAIN_SCREEN(R.layout.main_screen, "Main", Screens.LOGIN_SCREEN),
     BANKING_SCREEN(R.layout.banking_screen, "Banking", Screens.MAIN_SCREEN),
     EXPENSES_SCREEN(R.layout.banking_expenses_screen, "Expenses", Screens.BANKING_SCREEN),
     INCOME_SCREEN(4, "Income", Screens.BANKING_SCREEN), // TODO: replace 4 with layout of income screen
