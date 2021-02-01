@@ -50,7 +50,7 @@ public class ModeSwitcher {
             }
             if (expensesBackground != null) {
                 expensesBackground.setImageResource(R.drawable.joker1);
-                expensesScreenText.setTextColor(Color.WHITE);
+                if (expensesScreenText != null) expensesScreenText.setTextColor(Color.WHITE);
             }
         } else { // harley quinn mode
             if (mainBackground != null) {

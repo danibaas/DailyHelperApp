@@ -17,5 +17,5 @@
     <string name="banking_expenses_add_title">Name:</string>
     <string name="banking_expenses_add_amount">Amount:</string>
     <string name="banking_expenses_add_pagetitle">Add Expense</string>
-    <string name="banking_expenses_add_title_placeholder">McDonald&apos;s</string>
+    <string name="banking_expenses_add_title_placeholder">"McDonald's"</string>
 </resources>
