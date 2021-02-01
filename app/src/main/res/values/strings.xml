@@ -8,21 +8,23 @@
     <string name="weight_button_text">Weight</string>
     <string name="joker_mode">Joker Mode</string>
     <string name="hq_mode">Harley Quinn Mode</string>
+    <string name="back_button">Back</string>
+
+    #banking strings
     <string name="banking_string">Banking</string>
     <string name="banking_expenses_button">Expenses</string>
     <string name="banking_income_button">Income</string>
     <string name="banking_total">Total:  </string>
     <string name="banking_expenses">Expenses</string>
-    <string name="back_button">Back</string>
+    <string name="banking_add_title">Name:</string>
+    <string name="banking_add_amount">Amount:</string>
+    <string name="banking_add_title_placeholder">"McDonald's"</string>
+    <string name="banking_add_amount_placeholder">5,00</string>
+    <string name="banking_add_data">Add</string>
 
     #expenses strings
-    <string name="banking_expenses_add_title">Name:</string>
-    <string name="banking_expenses_add_amount">Amount:</string>
     <string name="banking_expenses_add_pagetitle">Add Expense</string>
-    <string name="banking_expenses_add_title_placeholder">"McDonald's"</string>
-    <string name="banking_expenses_add_amount_placeholder">5,00</string>
-    <string name="banking_expenses_add_data">Add</string>
 
     #income strings
-    <string name="banking_income_"></string>
+    <string name="banking_income_add_pagetitle">Add Income</string>
 </resources>

@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/ExpensesBackground"
+        android:id="@+id/IncomeBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/background_image_description"
@@ -17,10 +17,10 @@
         app:srcCompat="@drawable/joker1" />
 
     <TextView
-        android:id="@+id/AddExpense"
+        android:id="@+id/AddIncome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/banking_expenses_add_pagetitle"
+        android:text="@string/banking_income_add_pagetitle"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <TextView
-        android:id="@+id/ExpenseTitle"
+        android:id="@+id/IncomeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/banking_add_title"
@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="0.161" />
 
     <TextView
-        android:id="@+id/ExpenseAmount"
+        android:id="@+id/IncomeAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/banking_add_amount"
@@ -138,5 +138,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.277" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

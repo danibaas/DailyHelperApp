@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addIncomeButton(View view) {
-        // TODO: Add income screen
+        screen.setContentView(Screens.ADD_INCOME_SCREEN);
     }
 
     public void totalIncome(View view) {
