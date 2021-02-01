@@ -72,12 +72,24 @@
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#041B06"
+        android:text="@string/banking_expenses_add_data"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.941" />
+
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/JokerMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:background="#000000"
         android:onClick="modeSwitch"
         android:outlineAmbientShadowColor="#FF0000"
@@ -86,8 +98,12 @@
         android:textOff="@string/joker_mode"
         android:textOn="@string/hq_mode"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
         app:thumbTint="#FFFFFF"
         app:trackTint="#000000" />
 
@@ -95,15 +111,32 @@
         android:id="@+id/NameInput"
         android:layout_width="228dp"
         android:layout_height="60dp"
-        android:layout_marginTop="108dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/banking_expenses_add_title_placeholder"
         android:textColor="#01FD05"
         android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163" />
+
+    <EditText
+        android:id="@+id/AmountInput"
+        android:layout_width="178dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:text="@string/banking_expenses_add_amount_placeholder"
+        android:textColor="#FF0000"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
