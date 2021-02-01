@@ -1,5 +1,6 @@
-package nl.danibaas.dailyhelper;
+package nl.danibaas.dailyhelper.handlers;
 
+import nl.danibaas.dailyhelper.MainActivity;
 import nl.danibaas.dailyhelper.utilities.ModeSwitcher;
 import nl.danibaas.dailyhelper.utilities.Screens;
 

@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/BankingScreen"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:backgroundTint="#FAFAFA">
-
-    <Button
-        android:id="@+id/Back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="#041B06"
-        android:onClick="backButton"
-        android:text="@string/back_button"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="parent" />
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/BankingBackground"
+        android:id="@+id/IncomeBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/background_image_description"
@@ -32,10 +17,10 @@
         app:srcCompat="@drawable/joker1" />
 
     <TextView
-        android:id="@+id/welcomeText"
+        android:id="@+id/IncomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/banking_string"
+        android:text="@string/banking_income_button"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,30 +31,18 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
-        android:id="@+id/Expenses"
+        android:id="@+id/Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="88dp"
         android:background="#041B06"
-        android:onClick="expensesButton"
-        android:text="@string/banking_expenses_button"
+        android:onClick="backButton"
+        android:text="@string/back_button"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/Income"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="84dp"
-        android:background="#041B06"
-        android:onClick="incomeButton"
-        android:text="@string/banking_income_button"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/JokerMode"
@@ -91,16 +64,38 @@
         app:trackTint="#000000" />
 
     <Button
-        android:id="@+id/TotalMoney"
+        android:id="@+id/TotalIncome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="160dp"
         android:layout_marginBottom="36dp"
         android:backgroundTint="#041B06"
-        android:onClick="totalButton"
+        android:onClick="totalIncome"
         android:text="@string/banking_total"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/AddIncome"
+        android:layout_width="74dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="52dp"
+        android:clickable="true"
+        android:onClick="addIncomeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <ListView
+        android:id="@+id/AllIncome"
+        android:layout_width="233dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

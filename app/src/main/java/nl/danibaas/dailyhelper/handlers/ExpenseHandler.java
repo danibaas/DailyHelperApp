@@ -1,7 +1,10 @@
-package nl.danibaas.dailyhelper;
+package nl.danibaas.dailyhelper.handlers;
 
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import nl.danibaas.dailyhelper.MainActivity;
+import nl.danibaas.dailyhelper.R;
 import nl.danibaas.dailyhelper.objects.ExpenseObject;
 import nl.danibaas.dailyhelper.utilities.Formatter;
 

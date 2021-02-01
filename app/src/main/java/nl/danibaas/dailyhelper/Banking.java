@@ -1,19 +1,28 @@
 package nl.danibaas.dailyhelper;
 
 import android.widget.TextView;
+
+import nl.danibaas.dailyhelper.handlers.ExpenseHandler;
+import nl.danibaas.dailyhelper.handlers.IncomeHandler;
 import nl.danibaas.dailyhelper.utilities.Formatter;
 
 import java.util.Random;
 
 public class Banking {
     private ExpenseHandler expenses;
+    private IncomeHandler income;
 
     public Banking() {
         expenses = new ExpenseHandler();
+        income = new IncomeHandler();
     }
 
-    public ExpenseHandler getHandler() {
+    public ExpenseHandler getExpenseHandler() {
         return expenses;
+    }
+
+    public IncomeHandler getIncomeHandler() {
+        return income;
     }
 
     private double getTotal() {

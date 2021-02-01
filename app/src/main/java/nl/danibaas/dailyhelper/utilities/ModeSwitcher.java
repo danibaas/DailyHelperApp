@@ -31,6 +31,7 @@ public class ModeSwitcher {
         ImageView homeScreenBackground = MainActivity.getInstance().findViewById(R.id.HomeBackground);
         ImageView bankingBackground = MainActivity.getInstance().findViewById(R.id.BankingBackground);
         ImageView expensesBackground = MainActivity.getInstance().findViewById(R.id.ExpensesBackground);
+        ImageView incomeBackground = MainActivity.getInstance().findViewById(R.id.IncomeBackground);
         TextView homeScreenText = MainActivity.getInstance().findViewById(R.id.welcomeText);
         TextView expensesScreenText = MainActivity.getInstance().findViewById(R.id.Expenses);
         if (jokerMode) { // joker mode
@@ -52,6 +53,10 @@ public class ModeSwitcher {
                 expensesBackground.setImageResource(R.drawable.joker1);
                 if (expensesScreenText != null) expensesScreenText.setTextColor(Color.WHITE);
             }
+            if (incomeBackground != null) {
+                incomeBackground.setImageResource((R.drawable.joker1));
+                // TODO: text?
+            }
         } else { // harley quinn mode
             if (mainBackground != null) {
                 mainBackground.setImageResource(R.drawable.hq1);
@@ -70,6 +75,10 @@ public class ModeSwitcher {
             if (expensesBackground != null) {
                 expensesBackground.setImageResource(R.drawable.hq2proper);
                 expensesScreenText.setTextColor(Color.BLACK);
+            }
+            if (incomeBackground != null) {
+                incomeBackground.setImageResource((R.drawable.hq3));
+                // TODO: text?
             }
         }
     }

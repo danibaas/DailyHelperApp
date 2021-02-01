@@ -12,7 +12,7 @@ public enum Screens {
     BANKING_SCREEN(R.layout.banking_screen, "Banking", Screens.MAIN_SCREEN),
     EXPENSES_SCREEN(R.layout.banking_expenses_screen, "Expenses", Screens.BANKING_SCREEN),
     ADD_EXPENSES_SCREEN(R.layout.banking_add_expenses_screen, "AddExpenses", Screens.EXPENSES_SCREEN),
-    INCOME_SCREEN(4, "Income", Screens.BANKING_SCREEN), // TODO: replace 4 with layout of income screen
+    INCOME_SCREEN(R.layout.banking_income_screen, "Income", Screens.BANKING_SCREEN), // TODO: replace 4 with layout of income screen
     WEIGHT_SCREEN(5, "Weight", Screens.MAIN_SCREEN);
 
     private final int id;

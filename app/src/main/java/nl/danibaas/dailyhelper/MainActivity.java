@@ -4,7 +4,8 @@ import android.view.View;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import nl.danibaas.dailyhelper.utilities.ModeSwitcher;
+
+import nl.danibaas.dailyhelper.handlers.ScreenHandler;
 import nl.danibaas.dailyhelper.utilities.PasswordChecker;
 import nl.danibaas.dailyhelper.utilities.Screens;
 
@@ -57,20 +58,42 @@ public class MainActivity extends AppCompatActivity {
         banking.refreshTotal();
     }
 
+    // MONEY START
     // expenses
     public void expensesButton(View view) {
         screen.setContentView(Screens.EXPENSES_SCREEN);
         ListView lv = findViewById(R.id.AllExpenses);
-        lv.setAdapter(banking.getHandler().getAdapter());
-        banking.getHandler().refreshTotal();
+        lv.setAdapter(banking.getExpenseHandler().getAdapter());
+        banking.getExpenseHandler().refreshTotal();
     }
 
-    public void backButton(View view) {
-        screen.goBack();
+    public void addExpensesButton(View view) {
+        screen.setContentView(Screens.ADD_EXPENSES_SCREEN);
     }
 
     public void totalExpenses(View view) {
-        banking.getHandler().refreshTotal();
+        banking.getExpenseHandler().refreshTotal();
+    }
+
+    // income
+    public void incomeButton(View view) {
+        screen.setContentView(Screens.INCOME_SCREEN);
+        ListView lv = findViewById(R.id.AllIncome);
+        lv.setAdapter(banking.getIncomeHandler().getAdapter());
+        banking.getIncomeHandler().refreshTotal();
+    }
+
+    public void addIncomeButton(View view) {
+        // TODO: Add income screen
+    }
+
+    public void totalIncome(View view) {
+        banking.getIncomeHandler().refreshTotal();
+    }
+    // MONEY END
+
+    public void backButton(View view) {
+        screen.goBack();
     }
 
     // weight button
@@ -78,7 +101,5 @@ public class MainActivity extends AppCompatActivity {
         // TODO: open weight page
     }
 
-    public void addExpensesButton(View view) {
-        screen.setContentView(Screens.ADD_EXPENSES_SCREEN);
-    }
+
 }
