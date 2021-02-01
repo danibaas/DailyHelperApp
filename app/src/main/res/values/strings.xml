@@ -14,4 +14,8 @@
     <string name="banking_total">Total:  </string>
     <string name="banking_expenses">Expenses</string>
     <string name="back_button">Back</string>
+    <string name="banking_expenses_add_title">Name:</string>
+    <string name="banking_expenses_add_amount">Amount:</string>
+    <string name="banking_expenses_add_pagetitle">Add Expense</string>
+    <string name="banking_expenses_add_title_placeholder">McDonald&apos;s</string>
 </resources>

@@ -77,4 +77,8 @@ public class MainActivity extends AppCompatActivity {
     public void weightButton(View view) {
         // TODO: open weight page
     }
+
+    public void addExpensesButton(View view) {
+        screen.setContentView(Screens.ADD_EXPENSES_SCREEN);
+    }
 }

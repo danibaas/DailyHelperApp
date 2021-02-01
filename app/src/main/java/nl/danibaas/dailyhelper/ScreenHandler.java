@@ -33,6 +33,7 @@ public class ScreenHandler {
     public void fixChildren() {
         Screens.MAIN_SCREEN.setChilds(Screens.BANKING_SCREEN, Screens.WEIGHT_SCREEN);
         Screens.BANKING_SCREEN.setChilds(Screens.EXPENSES_SCREEN, Screens.INCOME_SCREEN);
+        Screens.EXPENSES_SCREEN.setChilds(Screens.ADD_EXPENSES_SCREEN);
     }
 
     public ModeSwitcher getSwitch() {
