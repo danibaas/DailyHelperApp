@@ -1,9 +1,10 @@
 package nl.danibaas.dailyhelper;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 
 import nl.danibaas.dailyhelper.handlers.ScreenHandler;
 import nl.danibaas.dailyhelper.utilities.PasswordChecker;
@@ -71,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
         screen.setContentView(Screens.ADD_EXPENSES_SCREEN);
     }
 
+    public void addExpense(View view) {
+        banking.getExpenseHandler().addExpense();
+        screen.goBack();
+        banking.getExpenseHandler().refreshTotal();
+    }
+
     public void totalExpenses(View view) {
         banking.getExpenseHandler().refreshTotal();
     }
@@ -87,6 +94,12 @@ public class MainActivity extends AppCompatActivity {
         screen.setContentView(Screens.ADD_INCOME_SCREEN);
     }
 
+    public void addIncome(View view) {
+        banking.getIncomeHandler().addIncome();
+        screen.goBack();
+        banking.getIncomeHandler().refreshTotal();
+    }
+
     public void totalIncome(View view) {
         banking.getIncomeHandler().refreshTotal();
     }
@@ -94,6 +107,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void backButton(View view) {
         screen.goBack();
+        if (screen.getCurrentScreen() == Screens.BANKING_SCREEN) {
+            banking.refreshTotal();
+        }
     }
 
     // weight button

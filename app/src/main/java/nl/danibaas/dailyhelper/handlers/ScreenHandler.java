@@ -31,6 +31,10 @@ public class ScreenHandler {
         switcher.refresh();
     }
 
+    public Screens getCurrentScreen() {
+        return currentScreen;
+    }
+
     public void fixChildren() {
         Screens.MAIN_SCREEN.setChilds(Screens.BANKING_SCREEN, Screens.WEIGHT_SCREEN);
         Screens.BANKING_SCREEN.setChilds(Screens.EXPENSES_SCREEN, Screens.INCOME_SCREEN);

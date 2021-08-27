@@ -1,18 +1,18 @@
 package nl.danibaas.dailyhelper.objects;
 
-import java.util.Date;
+import java.time.Instant;
 
 public abstract class FinanceObject {
     private String name = null;
     private double amount = 0d;
-    private Date dateOfExpense = null;
+    private Instant dateOfExpense = null;
     private FinanceType type;
 
     public enum FinanceType {
         EXPENSE, INCOME
     }
 
-    public FinanceObject(String name, double amount, Date dateOfExpense, FinanceType type) {
+    public FinanceObject(String name, double amount, Instant dateOfExpense, FinanceType type) {
         this.name = name;
         this.amount = amount;
         this.dateOfExpense = dateOfExpense;
@@ -27,7 +27,7 @@ public abstract class FinanceObject {
         return amount;
     }
 
-    public Date getDate() {
+    public Instant getDate() {
         return dateOfExpense;
     }
 
@@ -43,7 +43,7 @@ public abstract class FinanceObject {
         this.amount = amount;
     }
 
-    public void setDate(Date dateOfExpense) {
+    public void setDate(Instant dateOfExpense) {
         this.dateOfExpense = dateOfExpense;
     }
 }

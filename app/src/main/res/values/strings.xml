@@ -24,7 +24,13 @@
 
     #expenses strings
     <string name="banking_expenses_add_pagetitle">Add Expense</string>
+    <string name="banking_expense_add">Add an expense</string>
+    <string name="expense_name_hint">"McDonald's"</string>
+    <string name="expense_amount_hint">21.75</string>
 
     #income strings
     <string name="banking_income_add_pagetitle">Add Income</string>
+    <string name="banking_income_add">Add an income</string>
+    <string name="income_name_hint">Werk</string>
+    <string name="income_amount_hint">403.75</string>
 </resources>
