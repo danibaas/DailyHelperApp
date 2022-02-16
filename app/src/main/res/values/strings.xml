@@ -5,10 +5,12 @@
     <string name="login_text">Login</string>
     <string name="password_placeholder">Enter password…</string>
     <string name="banking_button_text">Banking</string>
-    <string name="weight_button_text">Weight</string>
+    <string name="mental_button_text">Mental</string>
     <string name="joker_mode">Joker Mode</string>
     <string name="hq_mode">Harley Quinn Mode</string>
     <string name="back_button">Back</string>
+    <string name="error">An error has occurred!</string>
+    <string name="exit">Exit</string>
 
     #banking strings
     <string name="banking_string">Banking</string>
@@ -33,4 +35,19 @@
     <string name="banking_income_add">Add an income</string>
     <string name="income_name_hint">Werk</string>
     <string name="income_amount_hint">403.75</string>
+
+    #mental strings
+    <string name="mental_string">Mental</string>
+    <string name="mental_state">Mental State</string>
+    <string name="mental_vent">Vent</string>
+
+    #anime strings
+    <string name="anime_string">Anime</string>
+    <string name="anime_home">Home</string>
+    <string name="anime_watching">Watching</string>
+    <string name="anime_completed">Completed</string>
+    <string name="anime_planning">Planning</string>
+    <string name="anime_dropped">Dropped</string>
+    <string name="manga_string">Manga</string>
+    <string name="manga_reading">Reading</string>
 </resources>

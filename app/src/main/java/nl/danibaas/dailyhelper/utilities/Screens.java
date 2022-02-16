@@ -1,9 +1,9 @@
 package nl.danibaas.dailyhelper.utilities;
 
-import nl.danibaas.dailyhelper.R;
-
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import nl.danibaas.dailyhelper.R;
 
 public enum Screens {
 
@@ -14,7 +14,12 @@ public enum Screens {
     ADD_EXPENSES_SCREEN(R.layout.banking_add_expenses_screen, "AddExpenses", Screens.EXPENSES_SCREEN),
     INCOME_SCREEN(R.layout.banking_income_screen, "Income", Screens.BANKING_SCREEN),
     ADD_INCOME_SCREEN(R.layout.banking_add_income_screen, "AddIncome", Screens.INCOME_SCREEN),
-    WEIGHT_SCREEN(5, "Weight", Screens.MAIN_SCREEN);
+    MENTAL_SCREEN(R.layout.mental_screen, "Mental", Screens.MAIN_SCREEN),
+    MENTAL_STATE_SCREEN(6, "MentalState", Screens.MENTAL_SCREEN),
+    MENTAL_VENT_SCREEN(7, "MentalVent", Screens.MENTAL_SCREEN),
+    ANIME_SCREEN(R.layout.anime_screen, "Anime", Screens.MAIN_SCREEN),
+    ANIME_VIEW_SCREEN(R.layout.anime_view_screen, "AnimeView", Screens.ANIME_SCREEN),
+    MANGA_SCREEN(R.layout.manga_screen, "Manga", Screens.ANIME_SCREEN);
 
     private final int id;
     private final String name;

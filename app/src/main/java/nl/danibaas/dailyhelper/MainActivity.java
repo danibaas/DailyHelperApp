@@ -1,12 +1,16 @@
 package nl.danibaas.dailyhelper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import nl.danibaas.dailyhelper.handlers.ScreenHandler;
+import nl.danibaas.dailyhelper.anime.Anime;
+import nl.danibaas.dailyhelper.anime.PageOptions;
+import nl.danibaas.dailyhelper.finance.Banking;
+import nl.danibaas.dailyhelper.finance.handlers.ScreenHandler;
 import nl.danibaas.dailyhelper.utilities.PasswordChecker;
 import nl.danibaas.dailyhelper.utilities.Screens;
 
@@ -16,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public PasswordChecker pw;
     public Banking banking;
     public ScreenHandler screen;
+    public Anime anime;
 
     private static MainActivity instance;
 
@@ -30,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         pw = new PasswordChecker();
         banking = new Banking();
         screen = new ScreenHandler();
+        anime = new Anime();
         setContentView(R.layout.activity_main);
     }
 
@@ -73,9 +79,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addExpense(View view) {
-        banking.getExpenseHandler().addExpense();
-        screen.goBack();
-        banking.getExpenseHandler().refreshTotal();
+        if (banking.getExpenseHandler().addExpense()) {
+            screen.goBack();
+            banking.getExpenseHandler().refreshTotal();
+        }
     }
 
     public void totalExpenses(View view) {
@@ -95,9 +102,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addIncome(View view) {
-        banking.getIncomeHandler().addIncome();
-        screen.goBack();
-        banking.getIncomeHandler().refreshTotal();
+        if (banking.getIncomeHandler().addIncome()) {
+            screen.goBack();
+            banking.getIncomeHandler().refreshTotal();
+        }
     }
 
     public void totalIncome(View view) {
@@ -112,10 +120,81 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // weight button
-    public void weightButton(View view) {
-        // TODO: open weight page
+    public void exit(View view) {
+        Intent i = new Intent(Intent.ACTION_MAIN);
+        i.addCategory(Intent.CATEGORY_HOME);
+        startActivity(i);
     }
 
+    // mental button
+    public void mentalButton(View view) {
+        screen.setContentView(Screens.MENTAL_SCREEN);
+    }
 
+    /// Anime section
+    // anime button
+    public void animeButton(View view) {
+        screen.setContentView(Screens.ANIME_SCREEN);
+    }
+
+    public void animeViewButton(View view) {
+        screen.setContentView(Screens.ANIME_VIEW_SCREEN);
+        if (anime.firstTime) {
+            anime.loadPage(PageOptions.ANIME_LOGIN);
+            anime.firstTime = false;
+        } else {
+            anime.loadPage(PageOptions.ANIME);
+        }
+    }
+
+    public void animeListButton(View view) {
+        anime.loadPage(PageOptions.ANIME);
+    }
+
+    public void animeHomeButton(View view) {
+        anime.loadPage(PageOptions.ANIME_HOME);
+    }
+
+    public void animeWatchingButton(View view) {
+        anime.loadPage(PageOptions.ANIME_WATCHING);
+    }
+
+    public void animeCompletedButton(View view) {
+        anime.loadPage(PageOptions.ANIME_COMPLETED);
+    }
+
+    public void animeDroppedButton(View view) {
+        anime.loadPage(PageOptions.ANIME_DROPPED);
+    }
+
+    public void animePlanningButton(View view) {
+        anime.loadPage(PageOptions.ANIME_PLANNING);
+    }
+
+    // manga
+    public void mangaButton(View view) {
+        screen.setContentView(Screens.MANGA_SCREEN);
+        if (anime.firstTime) {
+            anime.loadPage(PageOptions.ANIME_LOGIN);
+            anime.firstTime = false;
+        } else {
+            anime.loadPage(PageOptions.MANGA);
+        }
+    }
+
+    public void mangaListButton(View view) {
+        anime.loadPage(PageOptions.MANGA);
+    }
+
+    public void mangaReadingButton(View view) {
+        anime.loadPage(PageOptions.MANGA_READING);
+    }
+
+    public void mangaCompleted(View view) {
+        anime.loadPage(PageOptions.MANGA_COMPLETED);
+    }
+
+    public void mangaPlanning(View view) {
+        anime.loadPage(PageOptions.MANGA_PLANNING);
+    }
 }

@@ -1,4 +1,4 @@
-package nl.danibaas.dailyhelper.handlers;
+package nl.danibaas.dailyhelper.finance.handlers;
 
 import nl.danibaas.dailyhelper.MainActivity;
 import nl.danibaas.dailyhelper.utilities.ModeSwitcher;
@@ -36,10 +36,12 @@ public class ScreenHandler {
     }
 
     public void fixChildren() {
-        Screens.MAIN_SCREEN.setChilds(Screens.BANKING_SCREEN, Screens.WEIGHT_SCREEN);
+        Screens.MAIN_SCREEN.setChilds(Screens.BANKING_SCREEN, Screens.MENTAL_SCREEN);
         Screens.BANKING_SCREEN.setChilds(Screens.EXPENSES_SCREEN, Screens.INCOME_SCREEN);
         Screens.EXPENSES_SCREEN.setChilds(Screens.ADD_EXPENSES_SCREEN);
         Screens.INCOME_SCREEN.setChilds(Screens.ADD_INCOME_SCREEN);
+        Screens.MENTAL_SCREEN.setChilds(Screens.MENTAL_STATE_SCREEN, Screens.MENTAL_VENT_SCREEN);
+        Screens.ANIME_SCREEN.setChilds(Screens.ANIME_VIEW_SCREEN, Screens.MANGA_SCREEN);
     }
 
     public ModeSwitcher getSwitch() {

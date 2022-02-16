@@ -1,4 +1,4 @@
-package nl.danibaas.dailyhelper.objects;
+package nl.danibaas.dailyhelper.finance.objects;
 
 import java.time.Instant;
 

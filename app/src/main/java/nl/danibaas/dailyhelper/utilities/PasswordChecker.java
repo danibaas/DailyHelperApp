@@ -22,16 +22,8 @@ public class PasswordChecker {
         if (passwordField.getText().toString().equals(pw)) {
             MainActivity.getInstance().screen.setContentView(Screens.MAIN_SCREEN);
         } else {
-            showToast();
+            CustomToast.PASSWORD.showToast();
         }
-    }
-
-    private void showToast() { // displays message when the player enters incorrect password
-        Context context = MainActivity.getInstance().getApplicationContext();
-        String message = "Incorrect password, please try again.";
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, Html.fromHtml("<font color='#FF0000'>" + message + "</font>", 0), duration);
-        toast.show();
     }
 
     public void showPassword(boolean show) {

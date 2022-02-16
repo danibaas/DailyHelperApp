@@ -1,4 +1,4 @@
-package nl.danibaas.dailyhelper.handlers;
+package nl.danibaas.dailyhelper.finance.handlers;
 
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -11,8 +11,9 @@ import java.util.ArrayList;
 
 import nl.danibaas.dailyhelper.MainActivity;
 import nl.danibaas.dailyhelper.R;
-import nl.danibaas.dailyhelper.objects.FinanceObject;
-import nl.danibaas.dailyhelper.objects.IncomeObject;
+import nl.danibaas.dailyhelper.finance.objects.FinanceObject;
+import nl.danibaas.dailyhelper.finance.objects.IncomeObject;
+import nl.danibaas.dailyhelper.utilities.CustomToast;
 import nl.danibaas.dailyhelper.utilities.Formatter;
 import nl.danibaas.dailyhelper.utilities.Screens;
 
@@ -82,24 +83,32 @@ public class IncomeHandler {
         }
     }
 
-    public void addIncome() {
+    public boolean addIncome() {
         if (MainActivity.getInstance().screen.getCurrentScreen() == Screens.ADD_INCOME_SCREEN) {
             AppCompatEditText txt = MainActivity.getInstance().findViewById(R.id.IncomeNameInput);
             AppCompatEditText money = MainActivity.getInstance().findViewById(R.id.IncomeAmountInput);
+            if (txt.getText() == null || money.getText() == null) {
+                CustomToast.INCORRECT_FINANCE_PARAM.showToast();
+                return false;
+            }
             String name = txt.getText().toString();
             String moneyString = money.getText().toString();
             double parsedMoney = 0;
-            try {
-                if (moneyString.contains(",")) {
-                    moneyString = moneyString.replace(',', '.');
+            moneyString = Formatter.makeMonetary(moneyString);
+            if (Formatter.isParsable(moneyString)) {
+                parsedMoney = Formatter.parseDouble(moneyString);
+                if (Formatter.canFormat(parsedMoney)) {
+                    parsedMoney = Formatter.parseDouble(Formatter.formatDouble(parsedMoney));
+                } else {
+                    return false;
                 }
-                parsedMoney = Double.parseDouble(moneyString);
-            } catch (NumberFormatException e) {
-                System.out.println("Text was not a number! " + e);
-                return;
+            } else {
+                return false;
             }
             IncomeObject obj = new IncomeObject(name, parsedMoney, Instant.now(), FinanceObject.FinanceType.INCOME);
             addItem(obj);
+            return true;
         }
+        return false;
     }
 }

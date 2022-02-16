@@ -1,4 +1,4 @@
-package nl.danibaas.dailyhelper.handlers;
+package nl.danibaas.dailyhelper.finance.handlers;
 
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -11,8 +11,9 @@ import java.util.ArrayList;
 
 import nl.danibaas.dailyhelper.MainActivity;
 import nl.danibaas.dailyhelper.R;
-import nl.danibaas.dailyhelper.objects.ExpenseObject;
-import nl.danibaas.dailyhelper.objects.FinanceObject;
+import nl.danibaas.dailyhelper.finance.objects.ExpenseObject;
+import nl.danibaas.dailyhelper.finance.objects.FinanceObject;
+import nl.danibaas.dailyhelper.utilities.CustomToast;
 import nl.danibaas.dailyhelper.utilities.Formatter;
 import nl.danibaas.dailyhelper.utilities.Screens;
 
@@ -62,7 +63,9 @@ public class ExpenseHandler {
         final double total = getTotal();
         if (total > 0) {
             try {
-                toAdd = Formatter.formatDouble(getTotal());
+                if (Formatter.canFormat(getTotal())) {
+                    toAdd = Formatter.formatDouble(getTotal());
+                }
             } catch (NullPointerException e) {
                 System.out.println("Number was not formattable! " + getTotal());
                 toAdd = getTotal() + "";
@@ -83,24 +86,32 @@ public class ExpenseHandler {
         }
     }
 
-    public void addExpense() {
+    public boolean addExpense() {
         if (MainActivity.getInstance().screen.getCurrentScreen() == Screens.ADD_EXPENSES_SCREEN) {
             AppCompatEditText txt = MainActivity.getInstance().findViewById(R.id.NameInput);
             AppCompatEditText money = MainActivity.getInstance().findViewById(R.id.AmountInput);
+            if (txt.getText() == null || money.getText() == null) {
+                CustomToast.INCORRECT_FINANCE_PARAM.showToast();
+                return false;
+            }
             String name = txt.getText().toString();
             String moneyString = money.getText().toString();
             double parsedMoney = 0;
-            try {
-                if (moneyString.contains(",")) {
-                    moneyString = moneyString.replace(',', '.');
+            moneyString = Formatter.makeMonetary(moneyString);
+            if (Formatter.isParsable(moneyString)) {
+                parsedMoney = Formatter.parseDouble(moneyString);
+                if (Formatter.canFormat(parsedMoney)) {
+                    parsedMoney = Formatter.parseDouble(Formatter.formatDouble(parsedMoney));
+                } else {
+                    return false;
                 }
-                parsedMoney = Double.parseDouble(moneyString);
-            } catch (NumberFormatException e) {
-                System.out.println("Text was not a number! " + e);
-                return;
+            } else {
+                return false;
             }
             ExpenseObject obj = new ExpenseObject(name, parsedMoney, Instant.now(), FinanceObject.FinanceType.EXPENSE);
             addItem(obj);
+            return true;
         }
+        return false;
     }
 }
