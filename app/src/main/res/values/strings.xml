@@ -50,4 +50,9 @@
     <string name="anime_dropped">Dropped</string>
     <string name="manga_string">Manga</string>
     <string name="manga_reading">Reading</string>
+
+    #books
+    <string name="books_string">Books</string>
+    <string name="comics_string">Comics</string>
+    <string name="books_planning">Planning</string>
 </resources>

@@ -19,7 +19,12 @@ public enum Screens {
     MENTAL_VENT_SCREEN(7, "MentalVent", Screens.MENTAL_SCREEN),
     ANIME_SCREEN(R.layout.anime_screen, "Anime", Screens.MAIN_SCREEN),
     ANIME_VIEW_SCREEN(R.layout.anime_view_screen, "AnimeView", Screens.ANIME_SCREEN),
-    MANGA_SCREEN(R.layout.manga_screen, "Manga", Screens.ANIME_SCREEN);
+    MANGA_SCREEN(R.layout.manga_screen, "Manga", Screens.ANIME_SCREEN),
+    BOOK_SCREEN(R.layout.books_screen, "Books", Screens.MAIN_SCREEN),
+    BOOK_VIEW_SCREEN(R.layout.books_view_screen, "BookView", Screens.BOOK_SCREEN),
+    COMICS_SCREEN(R.layout.comics_screen, "Comics", Screens.BOOK_SCREEN),
+    BOOK_PLANNING_SCREEN(R.layout.books_planning_screen, "BookPlanning", Screens.BOOK_SCREEN);
+
 
     private final int id;
     private final String name;
