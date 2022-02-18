@@ -1,6 +1,7 @@
 package nl.danibaas.dailyhelper.utilities;
 
 import android.content.Context;
+import android.hardware.biometrics.BiometricPrompt;
 import android.text.Html;
 import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
@@ -33,7 +34,11 @@ public class PasswordChecker {
         password.setSelection(password.length());
     }
 
-    public boolean IsShowingPassword() {
+    public boolean isShowingPassword() {
         return showPassword;
+    }
+
+    public void test() {
+
     }
 }

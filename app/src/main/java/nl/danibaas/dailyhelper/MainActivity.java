@@ -3,9 +3,16 @@ package nl.danibaas.dailyhelper;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
+
+import java.util.concurrent.Executor;
 
 import nl.danibaas.dailyhelper.anime.Anime;
 import nl.danibaas.dailyhelper.anime.PageOptions;
@@ -28,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         return instance;
     }
 
+    private Executor executor;
+    private BiometricPrompt bioPrompt;
+    private BiometricPrompt.PromptInfo promptInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +48,33 @@ public class MainActivity extends AppCompatActivity {
         screen = new ScreenHandler();
         anime = new Anime();
         setContentView(R.layout.activity_main);
+        executor = ContextCompat.getMainExecutor(this);
+        bioPrompt = new BiometricPrompt(this, executor, new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+                super.onAuthenticationError(errorCode, errString);
+                Toast.makeText(getApplicationContext(), "Authentication Error:" + errString, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+                Toast.makeText(getApplicationContext(), "Authentication succeeded!", Toast.LENGTH_SHORT).show();
+                screen.setContentView(Screens.MAIN_SCREEN);
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                super.onAuthenticationFailed();
+                Toast.makeText(getApplicationContext(), "Authentication failed!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        promptInfo = new BiometricPrompt.PromptInfo.Builder().setTitle("Biometric login for DailyHelper").setSubtitle("Log in using your fingerprint").setNegativeButtonText("Use password instead").build();
+        Button bioButton = findViewById(R.id.LoginButton);
+        bioButton.setOnClickListener(view -> {
+            bioPrompt.authenticate(promptInfo);
+        });
     }
 
     public void loginButtonClick(View view) {
@@ -52,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showPassword(View view) {
-        pw.showPassword(!pw.IsShowingPassword());
+        pw.showPassword(!pw.isShowingPassword());
     }
 
     // banking buttons
